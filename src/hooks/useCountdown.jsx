@@ -1,14 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const useCountdown = () => {
-    const [day, setDay] = useState()
-    const [hour, setHour] = useState()
-    const [minute, setMinute] = useState()
-    const [second, setSecond]= useState()
-    
+const useCountdown = (date) => {
+  const [day, setDay] = useState();
+  const [hour, setHour] = useState();
+  const [minute, setMinute] = useState();
+  const [second, setSecond] = useState();
 
-
-    const countdown = (date) => {
+  useEffect(() => {
+    const countdown = () => {
       const countDate = new Date(date).getTime();
       const now = new Date().getTime();
 
@@ -29,11 +28,14 @@ const useCountdown = () => {
       setMinute(minuteNumber);
       setSecond(secondNumber);
     };
-    
-    setInterval(countdown,1000)
 
-    return [day, hour,minute,second]
+    const intervalId = setInterval(countdown, 1000);
 
+    // Limpar o intervalo quando o componente for desmontado
+    return () => clearInterval(intervalId);
+  }, [date]);
+
+  return [day, hour, minute, second];
 };
 
 export default useCountdown;
