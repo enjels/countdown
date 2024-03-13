@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Navigate } from "react-router-dom";
 import Title from "../components/Title";
 import Counter from "../components/Counter";
@@ -11,11 +11,13 @@ const Countdown = () => {
   // Redireciona para a página inicial se não houver evento definido
   if (!event) return <Navigate to="/" />;
 
-  const { title: eventTitle, color: eventColor, date: eventDate } = event;
+  const eventTitle = event.title
+  const eventColor = event.color
+  const eventDate = event.date
+
 
   // Obtém os valores do countdown usando o hook useCountdown
   const [day, hour, minute, second] = useCountdown(eventDate);
-
   return (
     <>
       <Title title={eventTitle} />

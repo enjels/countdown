@@ -8,8 +8,8 @@ import "./Home.css";
 
 const Home = () => {
   const [title, setTitle] = useState();
-  const [data, setData] = useState();
-  const [imagem, setImagem] = useState();
+  const [date, setDate] = useState();
+  const [image, setimage] = useState();
   const [color, setColor] = useState();
 
   const { setEvent } = useContext(CountdownContext);
@@ -21,8 +21,8 @@ const Home = () => {
 
     const eventObject = {
       title: title,
-      data: data,
-      imagem: imagem,
+      date: date,
+      image: image,
       color: color,
     };
     setEvent(eventObject);
@@ -48,16 +48,17 @@ const Home = () => {
           <input
             type="date"
             name="date"
-            onChange={(e) => setData(e.target.value)}
+            onChange={(e) => setDate(e.target.value)}
+            required
           />
         </label>
         <label>
-          <span>Imagem:</span>
+          <span>image:</span>
           <input
             type="text"
             name="iamgem"
             placeholder="Insira a URL"
-            onChange={(e) => setImagem(e.target.value)}
+            onChange={(e) => setimage(e.target.value)}
           />
         </label>
         <label>
