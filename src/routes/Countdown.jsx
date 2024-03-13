@@ -1,12 +1,25 @@
 import Title from "../components/Title";
 import Counter from "../components/Counter";
+
+import { useContext } from "react";
+
 import useCountdown from "../hooks/useCountdown";
 
+import { CountdownContext } from "../context/CountdownContext";
+
+import { Navigate } from "react-router-dom";
+
 const Countdown = () => {
-    const [day, hour, minute, second] = useCountdown("mar 15, 2024 00:00:00");
+  const { event } = useContext(CountdownContext);
+  if (!event) return <Navigate to="/" />;
+
+  const eventTitle = event.title;
+  const eventColor = event.color;
+
+  const [day, hour, minute, second] = useCountdown(event.date);
   return (
     <>
-      <Title title="Contagem regreciva para 2023" />
+      <Title title={eventTitle} />
       <div className="countdown-container">
         <Counter title="Dias" number={day} />
         <Counter title="Horas" number={hour} />
