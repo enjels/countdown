@@ -1,3 +1,5 @@
+import './Home.css';
+
 const Home = () => {
   return (
     <div className="home">
@@ -21,7 +23,7 @@ const Home = () => {
         <label>
           <span>Imagem:</span>
           <input
-            type="image"
+            type="text"
             name="iamgem"
             placeholder="Insira a URL"
           />
@@ -29,11 +31,11 @@ const Home = () => {
         <label>
           <span>Cor do tema:</span>
           <input
-            type="text"
-            name="texto"
-            placeholder="Digite o título do evento"
+            type="color"
+            name="color"
           />
         </label>
+        <input type="submit" value="Enviar"/>
       </form>
     </div>
   );
