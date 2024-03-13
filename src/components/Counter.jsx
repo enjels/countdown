@@ -1,9 +1,13 @@
 import "./Counter.css"
-const Counter = ({ title, number }) => {
+const Counter = ({ title, number, eventColor }) => {
   return (
     <div className="counter">
-      <div className="counter-number">{number}</div>
-      <h3 className="counter-text">{title}</h3>
+      <p className="counter-number" style={{ backgroundColor: eventColor}}>
+        {number}
+      </p>
+      <h3 className="counter-text" style={{ color: eventColor }}>
+        {title}
+      </h3>
     </div>
   );
 };
