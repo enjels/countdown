@@ -1,8 +1,9 @@
-# React + Vite
+# countdown
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Um conometro de tempo para chegar uma determinada data
 
-Currently, two official plugins are available:
+<a href="https://countdown-bice-six.vercel.app/" target="_blank" rel="noopener noreferrer">Acessar aplicação</a>
+![Layer 1](https://github.com/enjels/countdown/assets/90569314/6ccf3b77-4e41-418a-a018-94db635e08fd) ![Layer 2](https://github.com/enjels/countdown/assets/90569314/59bdecf7-6f1b-4539-8ee9-e15a7ae69968)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://github.com/enjels/countdown/assets/90569314/3666da13-b68f-443e-a98a-fab468a8d852
+
